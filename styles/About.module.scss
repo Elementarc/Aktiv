@@ -1,0 +1,135 @@
+@import "./vars.module.scss";
+
+.about_page {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 2400px;
+    margin-top: 50px;
+    overflow: hidden;
+    
+    main {
+
+        .preview {
+            position: relative;
+            width: 100%;
+            height: 550px;
+
+            @include breakpoint(mobile) {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+            .preview_content {
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding: 0 12%;
+                width: 100%;
+                height: 100%;
+                
+                h1 {
+                    position: relative;
+                    @include h1;
+                    font-size: 64px;
+                    color: white;
+                    div {
+                        position: absolute;
+                        top: 45%;
+                        left: -60px;
+                        height: 20px;
+                        width: 20px;
+                        background: $color_main;
+                        border-radius: 50%;
+                        @include breakpoint(mobile) {
+                            display: none
+                        }
+                    }
+                }
+                p {
+                    @include p;
+                    color: rgb(204, 204, 204);
+                }
+            }
+            .small_image {
+                position: absolute;
+                bottom: -80px;
+                right: 12%;
+                
+                width: 370px;
+                height: 210px;
+                box-shadow: 0px 3px 100px 0px rgba(0, 0, 0, 0.25);
+                img {
+                    object-fit: cover;
+                    object-position: center;
+                }
+                @include breakpoint(mobile) {
+                    bottom: -8rem;
+                    width: 90%;
+                    right: unset;
+                    transform: scale(.8);
+
+                    img {
+                        object-fit: cover;
+                        object-position: center;
+                    }
+                }
+                
+            }
+            .preview_img {
+                object-fit: cover;
+                object-position: center;
+            }
+            .blur {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background: rgb(0,0,0);
+                background: linear-gradient(45deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+            }
+        }
+
+        .content {
+            position: relative;
+            width: 100%;
+            padding: 12rem 12%;
+            @include breakpoint(mobile) {
+                padding: 14rem 1rem 12rem 1rem;
+            }
+            h2{
+                @include h2;
+            }
+            h1{
+                @include h1;
+            }
+            p{
+                @include p;
+                width: 60%;
+                margin-top: 1rem;
+                @include breakpoint(laptop) {
+                    width: 80%;
+                }
+                @include breakpoint(mobile) {
+                    width: 100%;
+                }
+            }
+            a {
+                display: inline-block;
+                @include a;
+                margin-top: 2rem;
+            }
+
+            .bubble {
+                z-index: -1;
+                position: absolute;
+                top: -250px;
+                left: 0;
+                width: 500px;
+                height: 1800px;
+            }
+        }
+    }
+}

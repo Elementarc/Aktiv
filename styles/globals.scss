@@ -1,3 +1,4 @@
+@import "./vars.module.scss";
 html,
 body {
   padding: 0;
@@ -12,5 +13,7 @@ a {
 }
 
 * {
+  padding: unset;
+  margin: unset;
   box-sizing: border-box;
 }

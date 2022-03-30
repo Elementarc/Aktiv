@@ -1,0 +1,103 @@
+@import "./vars.module.scss";
+
+.impressum {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 2400px;
+    overflow: hidden;
+    margin-top: 50px;
+    
+    main {
+        min-height: 100vh;
+        h1{
+            @include h1;
+            padding: 0 12%;
+            margin-top: 8rem;
+            @include breakpoint(mobile) {
+                padding: 0 1rem;
+                margin-top: 4rem;
+            }
+        }
+    
+        .grid {
+            margin-top: 4rem;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+            row-gap: 2rem;
+            width: 60%;
+            padding: 0 12%;
+            padding-bottom: 10rem;
+            @include breakpoint(laptop) {
+                width: 85%;
+            }
+            @include breakpoint(mobile) {
+                width: 100%;
+                padding: 0 1rem;
+                padding-bottom: 10rem;
+            }
+            .grid_item {
+                display: grid;
+                align-items: start;
+                justify-items: start;
+                grid-template-columns: 1fr 1fr;
+                column-gap: 5rem;
+
+                .grid_item_title {
+                    font-weight: 700;
+                    @include breakpoint(mobile) {
+                        font-size: 14px;
+                    }
+                }
+                p {
+                    @include p;
+                    
+                    @include breakpoint(mobile) {
+                        font-size: 14px;
+                    }
+                }
+            }
+    
+        }
+
+        .background_container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: -250px;
+            left: 0;
+            
+            .background_1 {
+                position: absolute;
+                right: -150px;
+                transform: rotate(330deg) scale(2);
+                @include breakpoint(laptop) {
+                    
+                    transform: rotate(330deg) scale(2);
+                }
+                @include breakpoint(mobile) {
+                    right: -550px;
+                    transform: rotate(335deg) scale(1);
+                }
+            }
+
+            .background_2 {
+                position: absolute;
+                right: -420px;
+                transform: rotate(325deg) scale(2.2);
+
+                @include breakpoint(laptop) {
+                    transform: rotate(330deg) scale(2);
+                }
+                @include breakpoint(mobile) {
+                    right: -450px;
+                    transform: rotate(330deg) scale(1);
+                }
+            }
+        }
+    }
+    
+
+    
+}

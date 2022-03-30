@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+$font_open_sans: 'Open Sans', sans-serif;
+$color_main_dark: #5E070D;
+$color_main_dark_2: #310205;
+$color_main: #BD0213;
+$color_main_bright: #cf2e3e;
+
+$color_main_light: #f67985;
+
+@mixin breakpoint($point) {
+    @if $point == desktop {
+        @media screen and (max-width: 2560px) { @content; }
+    }
+    @else if $point == mobile {
+        @media screen and (max-width: 900px) { @content; }
+    } @else if $point == laptop {
+        @media screen and (max-width: 1366px) { @content; }
+    }
+}
+
+@mixin h2 {
+    color: $color_main;
+    font-family: $font_open_sans;
+    font-size: 16px;
+    line-height: 1rem;
+    @include breakpoint(mobile) {
+        font-size: 14px;  
+    }
+}
+
+@mixin h1 {
+    color: black;
+    font-family: $font_open_sans;
+    font-size: 36px;
+    @include breakpoint(mobile) {
+        font-size: 24px;  
+    }
+}
+
+@mixin h3 {
+    color: black;
+    font-family: $font_open_sans;
+    font-size: 24px;
+    @include breakpoint(mobile) {
+        font-size: 20px;  
+    }
+}
+@mixin p {
+    color: black;
+    font-family: $font_open_sans;
+    line-height: 2rem;
+    font-size: 18px;
+    @include breakpoint(mobile) {
+        font-size: 16px;
+        line-height: 1.7rem;
+    }
+}
+
+@mixin a {
+    color: $color_main;
+    font-family: $font_open_sans;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1rem;
+    &:hover {
+        color: $color_main_bright;
+    }
+
+    @include breakpoint(mobile) {
+        font-size: 16px;  
+    }
+}
+
+@mixin button {
+    color: white;
+    font-family: $font_open_sans;
+    font-size: 18px;
+    font-weight: 700;
+    background: linear-gradient(45deg, $color_main_dark -20%, $color_main 60%);
+    padding: .8rem 5rem;
+    outline: none;
+    border: unset;
+    &:hover {
+        cursor: pointer;
+        background: linear-gradient(45deg, $color_main_dark -20%, $color_main_bright 80%);
+    }
+
+    @include breakpoint(mobile) {
+        font-size: 14px;  
+        padding: .7rem 4rem;
+    }
+}

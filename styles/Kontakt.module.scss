@@ -1,0 +1,146 @@
+@import "./vars.module.scss";
+
+.kontakt_page {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 2400px;
+    margin-top: 50px;
+    overflow: hidden;
+    
+    main {
+
+        .preview {
+            position: relative;
+            width: 100%;
+            height: 450px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            
+            @include breakpoint(mobile){
+                height: 250px;
+            }
+            .small_image {
+                position: absolute;
+                display: grid;
+                padding: 1rem;
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr 1fr;
+                bottom: -350px;
+                box-shadow: 0px 3px 100px 0px rgba(0, 0, 0, 0.25);
+                background: rgb(221, 221, 221);
+                column-gap: 1rem;
+                row-gap: 1rem;
+                width: 50%;
+                height: 500px;
+
+                @include breakpoint(laptop) {
+                    width: 70%;
+                }
+                @include breakpoint(mobile) {
+                    width: 95%;
+                    right: unset;
+                    transform: scale(1);
+                    height: 350px;
+                    bottom: -250px;
+                }
+                .grid_item {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    background: white;
+                    transition: .1s ease-in-out;
+                    padding: 0 1rem;
+                    &:Hover {
+                        transform: scale(1.1);
+                        cursor: pointer;
+
+                        @include breakpoint(mobile) {
+                            transform: unset;
+                            cursor: unset;
+                        }
+                    }
+                    h1{
+                        @include h1;
+                    }
+                    .content_container{
+                        display: flex;
+                        justify-content: center;
+                        column-gap: 2rem;
+                        align-items: center;
+                        flex-direction: row;
+                        pointer-events: none;
+                        
+                        @include breakpoint(mobile) {
+                            column-gap: 1rem;
+                        }
+                        .icon_container {
+                            position: relative;
+                            display: flex;
+                            pointer-events: none;
+                            width: 45px;
+                            height: 45px;
+                            @include breakpoint(mobile) {
+                                width: 45px;
+                                height: 45px;
+                            }
+                        }
+                        p {
+                            @include p;
+                            font-size: 24px;
+                            text-align: center;
+                            @include breakpoint(mobile) {
+                                font-size: 14px;
+                            }
+                            font-weight: 700;
+                            color: $color_main;
+                        }
+                    }
+                    
+                }
+                
+                
+            }
+            .preview_img {
+                object-fit: cover;
+                object-position: center;
+            }
+            .blur {
+                position: absolute;
+                pointer-events: none;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background: rgb(0,0,0);
+                background: linear-gradient(45deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+            }
+        }
+
+        .content {
+            position: relative;
+            pointer-events: none;
+            width: 100%;
+            height: 600px;
+            padding: 12rem 12%;
+            @include breakpoint(mobile) {
+                padding: 14rem 1rem 12rem 1rem;
+                height: 300px;
+            }
+            
+
+            .bubble {
+                z-index: -1;
+                position: absolute;
+                pointer-events: none;
+                transform: rotate(280deg);
+                top: -450px;
+                left: 450px;
+                width: 500px;
+                height: 1800px;
+            }
+        }
+    }
+}

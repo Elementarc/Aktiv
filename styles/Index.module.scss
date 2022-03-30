@@ -1,0 +1,548 @@
+@import "./vars.module.scss";
+
+.home_page {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 2400px;
+    overflow: hidden;
+    .home_container {
+        margin-top: 50px;
+        .intro_container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 0rem 8%;
+            height: 100vh;
+            min-height: 960px;
+            max-height: 1350px;
+            width: 100%;
+            max-height: 1350px;
+            height: auto;
+            min-height: 960px;
+
+            @include breakpoint(mobile) {
+                justify-content: start;
+                padding: 5rem 1rem;
+                
+                min-height: unset;
+            }
+            h1{
+                @include h1;
+                color: white;
+            }
+            p {
+                @include p;
+                width: 70%;
+                color: white;
+                margin-top: 1rem;
+                @include breakpoint(laptop) {
+                    width: 80%;
+                }
+                @include breakpoint(mobile) {
+                    width: 100%;
+                }
+                
+            }
+            button {
+                @include button();
+                margin-top: 2rem;
+                margin-bottom: 3rem;
+            }
+
+            .icons {
+                width: 100%;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                position: relative;
+                margin-top: 1rem;
+                column-gap: 2rem;
+                .icon_item {
+                    display: flex;
+                    flex-direction: row;
+                    position: relative;
+                    width: 30px;
+                    height: 30px;
+                }
+
+                h4   {
+                    @include p;
+                    color: white;
+                    font-weight: unset;
+                }
+                
+            }
+
+            .svg_intro {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+            }
+
+            .background_container {
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                width: 100%;
+                height: 100%;
+                background: black;
+                img {
+                    object-fit: cover;
+                    object-position: center;
+                }
+                .blur {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    background: rgb(0,0,0);
+                    background: linear-gradient(45deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+                }
+            }
+        }
+    
+        .offer_header {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 7rem 0rem 4rem 0rem;
+            
+            h2{
+                @include h2;
+            }
+    
+            .h1_with_deco {
+                width: 100%;
+                display: grid;
+                grid-template-columns: 1fr auto 1fr;
+                grid-template-rows: auto;
+                column-gap: 5rem;
+                padding: 0 5rem;
+                @include breakpoint(mobile) {
+                    grid-template-columns: 1fr;
+                    padding: 0 1rem;
+                }
+                .left_deco{
+                    height: 1px;
+                    width: 100%;
+                    background: black;
+                    background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+                    align-self: center;
+                    @include breakpoint(mobile) {
+                        display: none
+                    }
+                }
+    
+                h1{
+                   
+                    @include h1;
+                    text-align: center;
+                }
+    
+                .right_deco{
+                    @include breakpoint(mobile) {
+                        display: none
+                    }
+                    height: 1px;
+                    width: 100%;
+                    background: black;
+                    background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+                    transform: rotate(180deg);
+                    align-self: center
+                }
+            }
+    
+            
+            p{
+                @include p;
+                margin-top: 1rem;
+                text-align: center;
+                width: 70%;
+                @include breakpoint(mobile) {
+                    width: 100%;
+                    padding: 0 1rem; 
+                }
+            }
+        }
+        
+        .offer_container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            padding: 0 12%;
+            grid-template-rows: auto;
+            width: 100%;
+            column-gap: 2rem;
+            row-gap: 2rem;
+            
+            @include breakpoint(mobile) {
+                grid-template-columns: 1fr;
+                padding: 0 1rem;
+                column-gap: 1rem;
+                row-gap: 1rem;
+            }
+            .offer {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding: 0 5rem;
+                min-height: 310px;
+                border-radius: 20px;
+                box-shadow: 0px 4px 50px 0px rgba(0, 0, 0, 0.15);
+                background: white;
+                @include breakpoint(laptop) {
+                    padding: 0 3rem;
+                    
+                }
+                @include breakpoint(mobile) {
+                    padding: 0 1.5rem;
+                    min-height: 250px;
+                    border-radius: 15px;
+                }
+                h1{
+                    @include h3;
+                    z-index: 1;
+                }
+                p{
+                    @include p;
+                    margin-top: .8rem;
+                    z-index: 1;
+                }
+                a{
+                    position: relative;
+                    display: inline;
+                    @include a;
+                    margin-top: 1rem;
+                    z-index: 1;
+                }
+
+                .img_container {
+                    z-index: 0;
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    height: 100px;
+                    width: 200px;
+                    margin-bottom: 1rem;
+                    @include breakpoint(laptop) {
+                        height: 80px;
+                        width: 130px;
+                        opacity: .4;
+                    }
+                    @include breakpoint(mobile) {
+                        margin-bottom: .3rem;
+                    }
+                    img {
+                        object-fit: contain;
+                    }
+                }
+                
+            }
+        }
+    
+        .us_container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 0 12%;
+            width: 100%;
+            height: 500px;
+            margin-top: 12rem;
+            @include breakpoint(laptop) {
+                padding: 0 8%;
+            }
+            @include breakpoint(mobile) {
+                padding: 0 1rem;
+                margin-top: 6rem;
+            }
+            h2 {
+                @include h2;
+            }
+            h1 {
+                @include h1;
+            }
+            p {
+                @include p;
+                width: 60%;
+                margin-top: 1rem;
+                
+                @include breakpoint(laptop) {
+                    width: 80%;
+                }
+                @include breakpoint(mobile) {
+                    width: 100%;
+                }
+            }
+            button {
+                @include button;
+                margin-top: 2rem;
+            }
+    
+            .us_container_bubble{
+                position: absolute;
+                z-index: -1;
+                left: 0;
+                top: -200px;
+                height: 100%;
+                width: 100%;
+                @include breakpoint(mobile) {
+                    left: -180px;
+                }
+            }
+            .us_container_meeting{
+                position: absolute;
+                z-index: -1;
+                right: 12%;
+                top: 50px;
+                width: 200px;
+                height: 400px;
+                width: 400px;
+
+                @include breakpoint(laptop) {
+                    right: 8%;
+                    opacity: .4;
+                    top: 0px;
+                    height: 300px;
+                    width: 300px;
+                }
+
+                @include breakpoint(mobile) {
+                    
+                    right: 8%;
+                    top: 0px;
+                    height: 150px;
+                    width: 150px;
+                }
+            }
+        }
+    
+        .partner_container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-end;
+            padding: 0 12%;
+            width: 100%;
+            height: 500px;
+            margin-top: 12rem;
+            
+            
+            @include breakpoint(laptop) {
+                padding: 0 8%;
+            }
+            @include breakpoint(mobile) {
+                padding: 0 1rem;
+                margin-top: 4rem;
+            }
+            h2 {
+                @include h2;
+            }
+            h1 {
+                @include h1;
+            }
+            p {
+                @include p;
+                width: 60%;
+                margin-top: 1rem;
+                text-align: end;
+                @include breakpoint(laptop) {
+                    width: 80%;
+                }
+                @include breakpoint(mobile) {
+                    width: 100%;
+                }
+            }
+            button {
+                @include button;
+                margin-top: 2rem;
+            }
+    
+            .partner_container_bubble{
+                direction: rtl;
+                position: absolute;
+                z-index: -1;
+                right: 0px;
+                top: -200px;
+                height: 100%;
+                width: 100%;
+                img{
+                    transform: scaleY(1) scaleX(-1);
+                }
+
+                @include breakpoint(mobile) {
+                    right: -180px;
+                }
+            }
+            .partner_container_meeting{
+                position: absolute;
+                left: 12%;
+                top: 50px;
+                width: 200px;
+                height: 400px;
+                width: 400px;
+                z-index: -1;
+                @include breakpoint(laptop) {
+                    left: 8%;
+                    opacity: .4;
+                    top: 0px;
+                    height: 300px;
+                    width: 300px;
+                }
+
+                @include breakpoint(mobile) {
+                    
+                    right: 8%;
+                    top: 0px;
+                    height: 150px;
+                    width: 150px;
+                }
+            }
+        }
+    
+        .strength_container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            margin-top: 16rem;
+            padding-bottom: 5rem;
+            @include breakpoint(mobile) {
+                margin-top: 6rem;
+            }
+            span{
+                width: 70%;
+                height: 1px;
+                background: black;
+                background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+    
+            }
+            h1 {
+                @include h1;
+                margin-top: 3rem;
+            }
+    
+            .strength_item_container {
+                display: grid;
+                width: 100%;
+                grid-template-columns: 1fr 1fr 1fr;
+                row-gap: 1rem;
+                padding: 0 12%;
+                column-gap: 5rem;
+                
+                grid-template-rows: auto;
+                margin-top: 4rem;
+                @include breakpoint(laptop) {
+                    column-gap: 2rem;
+                    padding: 0 1rem;
+                }
+                @include breakpoint(mobile) {
+                    
+                    column-gap: 1rem;
+                    row-gap: 4rem;
+                    padding: 0 1rem;
+                    grid-template-columns: 1fr 1fr;
+                }
+                .strength {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    @include breakpoint(mobile) {
+                        
+                    }
+                    .img_background {
+                        background: $color_main;
+                        position: relative;
+                        width: 75px;
+                        height: 75px;
+                        border-radius: 50%;
+                        @include breakpoint(mobile) {
+                    
+                            width: 45px;
+                            height: 45px;
+                        }
+                        img {
+                            transform: scale(.5)
+                        }
+                    }
+                    
+    
+                    h1{
+                        @include h1;
+                        margin-top: 2rem;
+                        padding: 0 1rem;
+                        font-size: 24px;
+                        @include breakpoint(mobile) {
+                            margin-top: 1rem;
+                            font-size: 16px;
+                        }
+                    }
+                    p{
+                        text-align: center;
+                        padding: 0 1rem;
+                        margin-top: 1rem;
+                        @include p;
+                        @include breakpoint(mobile) {
+                    
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+            
+        }
+    
+        .termin_container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 16rem;
+            padding-bottom: 12rem;
+            @include breakpoint( mobile ) {
+                margin-top: 6rem;
+                padding-bottom: 8rem;
+            }
+            h1{
+                @include h1;
+            }
+            p{
+                @include p;
+                text-align: center;
+                width: 60%;
+                margin-top: 1rem;
+                @include breakpoint(mobile) {
+                    width: 100%;
+                    padding: 0 1rem;
+                }
+            }
+            button {
+                @include button;
+                margin-top: 2rem;
+            }
+
+            .bottom_bubble {
+                position: absolute;
+                overflow: unset;
+                pointer-events: none;
+                z-index: -1;
+                top: -430px;
+                width: 100%;
+                height: 700px;
+                @include breakpoint(mobile) {
+                    top: -280px;
+                    min-width: 900px;
+                    height: 500px;
+                }
+            }
+        }
+    }
+}
